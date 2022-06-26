@@ -1,0 +1,7 @@
+name: Lobby
+version: '${project.version}'
+main: de.murmelmeister.lobby.Lobby
+api-version: 1.19
+authors: [ Murmelmeister ]
+description: The main system for the lobby.
+website: https://www.youtube.com/Murmelmeister
