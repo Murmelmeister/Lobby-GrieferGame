@@ -109,7 +109,7 @@ public class Messages {
     }
 
     public String getConfigMessage(String path) {
-        return HexColor.format(getConfig().getString(path));
+        return getConfig().getString(HexColor.format(path));
     }
 
     public String getPrefix() {

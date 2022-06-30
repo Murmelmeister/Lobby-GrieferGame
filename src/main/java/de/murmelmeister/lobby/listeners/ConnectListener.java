@@ -16,6 +16,8 @@ public class ConnectListener extends Listeners {
         Player player = event.getPlayer(); // Player
         event.joinMessage(null);
 
+        player.getInventory().clear();
+
         try {
             player.teleport(this.locations.getSpawn()); // Teleport to the spawn
         } catch (NullPointerException | IllegalArgumentException e) {
@@ -27,7 +29,7 @@ public class ConnectListener extends Listeners {
         // When the death height does not exist
         if (this.locations.getConfig().get("Locations.DeathHeight") == null) {
             sendMessage(player, "§8--- §cSetup §8---");
-            sendMessage(player, "§7Bitte setze die Todeshöhe. §7(§c/setdeathheight§7)");
+            sendMessage(player, "§7Bitte setze die Todeshöhe. §8(§c/setdeathheight§8)");
         }
     }
 
