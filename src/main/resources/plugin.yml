@@ -5,3 +5,23 @@ api-version: 1.19
 authors: [ Murmelmeister ]
 description: The main system for the lobby.
 website: https://www.youtube.com/Murmelmeister
+
+commands:
+  build:
+    usage: /<command> [player]
+    description: Set you in or out of the build mode.
+  deathheight:
+    usage: /<command>
+    description: Show you the death height.
+  lobbysystem:
+    usage: /<command> [reload]
+    description: Admin command edit the plugin.
+  setdeathheight:
+    usage: /<command>
+    description: Set the death height.
+  setspawn:
+    usage: /<command>
+    description: Set the spawn.
+  spawn:
+    usage: /<command>
+    description: Teleport you to the spawn.

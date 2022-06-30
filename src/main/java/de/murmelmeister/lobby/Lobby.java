@@ -8,12 +8,14 @@ public final class Lobby extends Main {
 
     @Override
     public void onDisable() {
+        getInitPlugin().onDisable();
         handleDisableMessage();
     }
 
     @Override
     public void onEnable() {
         setInitPlugin(new InitPlugin());
+        getInitPlugin().onEnable();
         handleEnableMessage();
     }
 
