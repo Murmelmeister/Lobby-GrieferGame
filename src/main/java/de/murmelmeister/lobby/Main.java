@@ -21,7 +21,7 @@ public abstract class Main extends JavaPlugin {
     }
 
     public String getVersion() {
-        return "1.0.0-ALPHA-SNAPSHOT";
+        return "0.0.1-ALPHA-SNAPSHOT";
     }
 
     public String getAuthor() {
