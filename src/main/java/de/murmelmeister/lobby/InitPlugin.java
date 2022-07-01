@@ -3,8 +3,10 @@ package de.murmelmeister.lobby;
 import de.murmelmeister.lobby.api.Locations;
 import de.murmelmeister.lobby.commands.Commands;
 import de.murmelmeister.lobby.configs.Messages;
+import de.murmelmeister.lobby.configs.MySQL;
 import de.murmelmeister.lobby.listeners.Listeners;
 import de.murmelmeister.lobby.utils.Lists;
+import de.murmelmeister.playtime.PlayTimeAPI;
 
 public class InitPlugin {
 
@@ -13,17 +15,23 @@ public class InitPlugin {
 
     private Lists lists;
 
+    private MySQL mySQL;
+    private PlayTimeAPI playTimeAPI;
+
     private Listeners listeners;
     private Commands commands;
 
     public void onDisable() {
-
+        getMySQL().disconnect();
     }
 
     public void onEnable() {
         setLists(new Lists());
         setMessages(new Messages());
         setLocations(new Locations());
+        setMySQL(new MySQL());
+        getMySQL().connectPlayTime();
+        setPlayTimeAPI(new PlayTimeAPI(getMySQL().getConnection()));
         setListeners(new Listeners());
         setCommands(new Commands());
         getListeners().registerListeners();
@@ -68,5 +76,21 @@ public class InitPlugin {
 
     public void setLocations(Locations locations) {
         this.locations = locations;
+    }
+
+    public MySQL getMySQL() {
+        return mySQL;
+    }
+
+    public void setMySQL(MySQL mySQL) {
+        this.mySQL = mySQL;
+    }
+
+    public PlayTimeAPI getPlayTimeAPI() {
+        return playTimeAPI;
+    }
+
+    public void setPlayTimeAPI(PlayTimeAPI playTimeAPI) {
+        this.playTimeAPI = playTimeAPI;
     }
 }
